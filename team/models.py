@@ -15,7 +15,7 @@ class Members(models.Model):
 
 	phn_rgx = RegexValidator(regex=r'^[7-9]\d{9}$', message="Phone number must be entered in the format: '9999999999'. 10 digits allowed.")
 	email_validator = EmailValidator(message= "Wrong email ")
-	name_rgx = RegexValidator(regex=r'^[a-zA-Z]+$', message="Name should not contain space or any special character.")
+	name_rgx = RegexValidator(regex=r'^[a-zA-Z]*$', message="Name should not contain space or any special character.")
 
 	first_name = models.CharField(validators=[name_rgx],max_length=100, blank=True, default='')
 	last_name = models.CharField(validators=[name_rgx],max_length=100, blank=True, default='')
